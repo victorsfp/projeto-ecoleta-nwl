@@ -201,3 +201,60 @@
     background: #E1FAEC;
     border: 2px solid #34CB79;
   }
+
+  
+.img-loading {
+  width: 30%;
+  animation: rotate 3s linear infinite;
+  
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(359deg);
+  }
+}
+
+.container-loading {    
+  padding: 10%;
+  text-align: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.result-input {
+  margin-top: 5%;
+  width: 100%;
+  color: #2FB86E;
+  border-radius: 5px;
+  border: 1px solid #2FB86E;
+  background-color: transparent;
+  text-align: center;
+  height: 50px;
+  
+}
+.span-loading{
+  background-color: #2FB86E ;
+  width: 10%;
+  height: 100%;
+  float: left;
+  color: #FFF;
+}
+.span-loading p {
+  margin-top: 20%;
+}
+
+.content-loading{
+    background-color: #FFF;
+    width: 90%;
+    height: 100%;
+    float: right;
+}
+
+.content-loading p{
+  margin-top: 2%;
+}

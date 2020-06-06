@@ -1,11 +1,13 @@
 import React, { useEffect, useState , ChangeEvent, FormEvent } from 'react';
 import { Link , useHistory } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
+import { FiArrowLeft , FiCheckCircle } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import { LeafletMouseEvent } from "leaflet";
+import Modal from 'react-modal';
 import api from '../../services/api';
 
 import Dropzone from "../../components/Dropzone";
+import refresh from "../../assets/refresh.png";
 
 import axios from 'axios';
 
@@ -30,11 +32,30 @@ interface IBGECityReponse {
     nome: string
 }
 
+
 const CreatePoint = () => {
 
+    const customStyles = {
+        content : {
+            top                   : '50%',
+            left                  : '50%',
+            right                 : 'auto',
+            bottom                : 'auto',
+            marginRight           : '-50%',
+            width: '40%',
+            height: '70%',
+            transform             : 'translate(-50%, -50%)', 
+            border: 'nonse'   ,
+            backgroundColor: 'transparent'
+        }
+    };
+
+    
+    const history = useHistory()
     const [items, setItems] = useState<Item[]>([]); //ou Array<Item> ou Item[]
     const [ufs, setUfs] = useState<string[]>([])
     const [cities, setCities] = useState<string[]>([]);
+    const [resultInput, setResultInput] = useState<Boolean>(false);
 
     const [initialPostion, setInitalPosition] = useState<[number,number]>([0,0]);
 
@@ -43,6 +64,8 @@ const CreatePoint = () => {
         email: '',
         whatsapp: ''
     })
+
+    const [modalIsOpen,setIsOpen] = useState(false);
 
     const [selectedUf, setSelectedUf] = useState("0");
     const [selectedCity, setSelectedCity] = useState("0");
@@ -57,7 +80,7 @@ const CreatePoint = () => {
         })
     },[])
 
-    const history = useHistory()
+    
 
     useEffect(() => {
         api.get('items')
@@ -137,9 +160,13 @@ const CreatePoint = () => {
             data.append('image', selectedFile);
         }
         
+        setIsOpen(true);
         await api.post('points', data)
-        alert('Ponto de coleta criado!');
-        history.push('/');
+        setTimeout(() => {
+            setIsOpen(false)
+            setResultInput(true)
+        }, 2000);
+        // history.push('/'); //VOLTAR PARA ROTA DE INICIO
     }
 
     return (
@@ -151,10 +178,25 @@ const CreatePoint = () => {
                     <FiArrowLeft />
                     Voltar para home
                 </Link>
-            </header>
+            </header> 
+
+            <Modal
+                id="modalLoading"
+                isOpen={modalIsOpen}                            
+                style={customStyles}       
+                contentLabel="Modal loading"
+            >
+
+                <div className="container-loading">
+                <img src={refresh} alt="Loading" className="img-loading"/>
+                </div>
+                
+            </Modal> 
 
             <form onSubmit={handleSubmit}>
                 <h1>Cadastro do <br /> ponto de coleta</h1>
+
+                
 
                 <Dropzone onFileUploaded={setSeletedFile} />
 
@@ -259,6 +301,21 @@ const CreatePoint = () => {
                 <button type="submit">
                     Cadastrar ponto de coleta
                 </button>
+
+
+                {resultInput === true ? (
+                    <div className="result-input">
+                        <div className="span-loading">
+                            <p><FiCheckCircle size={24}/></p>
+                        </div>
+                        <div className="content-loading">
+                            <p>Ponto de coleta cadastrado com sucesso.</p>
+                        </div>
+                                            
+                    </div>
+                ) : ''}
+
+                
             </form>
 
         </div>

@@ -3,12 +3,14 @@ import {useDropzone} from 'react-dropzone'
 import { FiUpload } from 'react-icons/fi';
 import './style.css';
 
+
+
 interface Props {
     onFileUploaded: (file: File) => void;
 }
 
 const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
-    const [selectedFileUrl, setSeletedFileUrl ] = useState('')
+  const [selectedFileUrl, setSeletedFileUrl ] = useState('')  
 
   const onDrop = useCallback(acceptedFiles => {
       const file = acceptedFiles[0]
@@ -38,7 +40,6 @@ const Dropzone: React.FC<Props> = ({ onFileUploaded }) => {
         }
 
         
-
       {    
         // isDragActive ?
         //   <p>Drop the files here ...</p> :
