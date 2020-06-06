@@ -1,4 +1,7 @@
+
 # Ecoleta - Sobre
+
+![](./img/capa.jpg)
 
 Ecoleta é uma aplicação voltada para o auxílio de localização de pontos de coletas de resíduos. A mesma foi desenvolvido em um evento junto a [Rocktseat](https://rocketseat.com.br/)/[Github](https://github.com/Rocketseat) para aprimorar alguns conhecimentos ja adquiridos e para aquisições de novos conhecimentos.
 
@@ -23,6 +26,7 @@ Ecoleta é uma aplicação voltada para o auxílio de localização de pontos de
 - Expo
 - Expo Fonte
 - TypeScript
+- Axios (Para requisições)
 - React Navigation (Para navegações de rotas)
 - React Native Maps (Para utilização de mapa)
 - React Native SVG (Para utilização de arquivos SVG)
