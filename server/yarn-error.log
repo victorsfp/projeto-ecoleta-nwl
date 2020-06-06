@@ -1,0 +1,54 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add celebrate
+
+PATH: 
+  C:\Program Files\Microsoft MPI\Bin\;C:\Python27\;C:\Python27\Scripts;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Git\cmd;C:\Program Files\kubectl;C:\Program Files\helm\windows-amd64;C:\Program Files\IBM\Cloud\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\PROGRA~1\IBM\IBMDAT~1\BIN;C:\xampp\php;C:\composer;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files (x86)\PuTTY\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\IBM\Personal Communications\;C:\Program Files (x86)\IBM\Trace Facility\;C:\Program Files\wc3270\;C:\Program Files (x86)\UnxUtils\usr\local\wbin;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\150\DTS\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\PSTools;C:\Program Files\nodejs\;C:\Users\VictorDosSantosFeito\Anaconda3;C:\Users\VictorDosSantosFeito\Anaconda3\Library\mingw-w64\bin;C:\Users\VictorDosSantosFeito\Anaconda3\Library\usr\bin;C:\Users\VictorDosSantosFeito\Anaconda3\Library\bin;C:\Users\VictorDosSantosFeito\Anaconda3\Scripts;C:\Users\VictorDosSantosFeito\AppData\Local\Microsoft\WindowsApps;C:\Users\VictorDosSantosFeito\AppData\Roaming\Composer\vendor\bin;C:\ffmpeg\bin;C:\xampp\mysql\bin;C:\Users\VictorDosSantosFeito\AppData\Local\Yarn\bin;C:\Program Files\JetBrains\PyCharm Community Edition 2019.2.5\bin;;C:\Program Files\wc3270\;C:\Program Files (x86)\UnxUtils\usr\local\wbin;C:\Users\VictorDosSantosFeito\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\IBM\Cloud\bin;C:\PSTools;C:\Users\VictorDosSantosFeito\AppData\Roaming\npm
+
+Yarn version: 
+  1.19.1
+
+Node version: 
+  12.18.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\VictorDosSantosFeito\Desktop\Pessoal\Estudos\Projeto Rockseat\NextLevelWeek\server\node_modules\sqlite3\lib\binding\node-v72-win32-x64\node_sqlite3.node'
+
+npm manifest: 
+  {
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "dev": "npx ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
+      "knex:seed": "knex --knexfile knexfile.ts seed:run",
+      "knex:migrate": "knex --knexfile knexfile.ts migrate:latest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@types/cors": "^2.8.6",
+      "@types/multer": "^1.4.3",
+      "cors": "^2.8.5",
+      "express": "^4.17.1",
+      "knex": "^0.21.1",
+      "multer": "^1.4.2",
+      "sqlite3": "^4.2.0"
+    },
+    "devDependencies": {
+      "@types/express": "^4.17.6",
+      "ts-node": "^8.10.2",
+      "ts-node-dev": "^1.0.0-pre.44",
+      "typescript": "^3.9.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
